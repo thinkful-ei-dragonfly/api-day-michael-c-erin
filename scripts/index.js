@@ -31,6 +31,18 @@ api.createItem('pears')
     console.log(items);
   });
 
+// api.getItems()
+//   .then(res => res.json())
+//   .then((items) => {
+//     const item = items[0];
+//     return api.updateItem(item.id, { name: 'this should be THIS'});
+//   })
+//   .then(res => res.json())
+//   .then(() => console.log('updated!'));
+
+
+
+
 // fetch('https://thinkful-list-api.herokuapp.com/ei-student/items')
 //   .then(res => res.json())
 //   .then(data => console.log(data));
