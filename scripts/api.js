@@ -25,7 +25,7 @@ let api = (function() {
   let createItem = function(name) {
     let newItem = JSON.stringify({
       name,
-      //undo shorthand?
+   
     });
     return fetch(`${BASE_URL}/items`, {
       method: 'POST',
@@ -34,8 +34,7 @@ let api = (function() {
       }),
       body: newItem,
     });
-    //need to do a .then?
-    //.then(res => res.json())
+  
   };
 
   return {

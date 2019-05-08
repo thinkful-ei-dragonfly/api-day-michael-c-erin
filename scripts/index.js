@@ -4,12 +4,19 @@
 $(document).ready(function() {
   shoppingList.bindEventListeners();
   shoppingList.render();
+  
+  api.getItems()
+    .then(res => res.json())
+    .then((items) => {
+      items.forEach((item) => store.addItem(item));
+      shoppingList.render();
+    });
 });
 
-store.items.push(Item.create('apples'));
+// store.items.push(Item.create('apples'));
 
 api.getItems();
-// .then(res => console.log(res));
+//.then(res => console.log(res));
 
 console.log(api.BASE_URL);
 
@@ -28,9 +35,9 @@ api.createItem('pears')
 //   .then(res => res.json())
 //   .then(data => console.log(data));
 
-api.getItems()
-  .then(items => {
-    items.forEach(item => store.addItem(item));
-    shoppingListrender();
-  });
-    .catch(e => console.log(e.message);
+// api.getItems()
+//   .then(items => {
+//     items.forEach(item => store.addItem(item));
+//     shoppingListrender();
+//   });
+//     .catch(e => console.log(e.message);
