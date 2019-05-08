@@ -13,6 +13,7 @@ api.getItems();
 
 console.log(api.BASE_URL);
 
+
 api.createItem('pears')
   .then(res => res.json())
   .then((newItem) => {
@@ -26,3 +27,10 @@ api.createItem('pears')
 // fetch('https://thinkful-list-api.herokuapp.com/ei-student/items')
 //   .then(res => res.json())
 //   .then(data => console.log(data));
+
+api.getItems()
+  .then(items => {
+    items.forEach(item => store.addItem(item));
+    shoppingListrender();
+  });
+    .catch(e => console.log(e.message);

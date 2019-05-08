@@ -2,6 +2,7 @@
 
 let api = (function() {
   const BASE_URL = 'https://thinkful-list-api.herokuapp.com/michaelc';
+
   let getItems = function() {
     return fetch(`${BASE_URL}/items`)
       .then(response => {
@@ -10,12 +11,28 @@ let api = (function() {
         }
         throw new Error(response.statusText);
       }); 
-      
+
+      //let error;
+      // return fetch(BASE_URL + '/items')
+      // .then (res => {
+      //   if (!res.ok) {
+      //     error = {}
+      //   }
+      //   return res.json();
+      // })
+      // .then(data => {
+      //   if (error) {
+      //     error.message = data.message;
+      //     return Promise.reject(error)
+      //   }
+      // })  
+
   };
 
   let createItem = function(name) {
     let newItem = JSON.stringify({
       name,
+      //undo shorthand?
     });
     return fetch(`${BASE_URL}/items`, {
       method: 'POST',
@@ -24,6 +41,8 @@ let api = (function() {
       }),
       body: newItem,
     });
+    //need to do a .then?
+    //.then(res => res.json())
   };
 
   return {
