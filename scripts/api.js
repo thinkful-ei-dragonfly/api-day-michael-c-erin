@@ -5,28 +5,21 @@ let api = (function() {
 
   let getItems = function() {
     return fetch(`${BASE_URL}/items`)
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error(response.statusText);
-      }); 
-
-      //let error;
-      // return fetch(BASE_URL + '/items')
-      // .then (res => {
-      //   if (!res.ok) {
-      //     error = {}
-      //   }
-      //   return res.json();
-      // })
-      // .then(data => {
-      //   if (error) {
-      //     error.message = data.message;
-      //     return Promise.reject(error)
-      //   }
-      // })  
-
+      
+    //let error;
+    // return fetch(BASE_URL + '/items')
+    // .then (res => {
+    //   if (!res.ok) {
+    //     error = {}
+    //   }
+    //   return res.json();
+    // })
+    // .then(data => {
+    //   if (error) {
+    //     error.message = data.message;
+    //     return Promise.reject(error)
+    //   }
+    // })  
   };
 
   let createItem = function(name) {
