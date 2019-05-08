@@ -21,15 +21,15 @@ api.getItems();
 console.log(api.BASE_URL);
 
 
-api.createItem('pears')
-  .then(res => res.json())
-  .then((newItem) => {
-    return api.getItems();
-  })
-  .then(res => res.json())
-  .then((items) => {
-    console.log(items);
-  });
+// api.createItem('pears')
+//   .then(res => res.json())
+//   .then((newItem) => {
+//     return api.getItems();
+//   })
+//   .then(res => res.json())
+//   .then((items) => {
+//     console.log(items);
+//   });
 
 // api.getItems()
 //   .then(res => res.json())
